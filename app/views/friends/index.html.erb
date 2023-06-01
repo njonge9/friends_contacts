@@ -1,0 +1,19 @@
+<%if user_signed_in?%>
+<h1>Friends</h1>
+
+<div id="friends">
+  <% @friends.each do |friend| %>
+
+  <%if friend.user == current_user%>
+    <%= render friend %>
+    <p>
+      <%= link_to "Show this friend", friend , class:"btn btn-primary"%>
+    </p>
+    <%end%>
+  <% end %>
+</div>
+
+<%= link_to "New friend", new_friend_path, class:"btn btn-dark" %>
+<%else%>
+  Welcome to our friends app... where you keep records of your best friends contacts
+<%end%>

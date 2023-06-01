@@ -1,0 +1,10 @@
+
+<%= render @friend %>
+
+<div>
+  <%= link_to "Edit this friend", edit_friend_path(@friend), class: "btn btn-primary" %> 
+  <%= link_to "Back to friends", friends_path, class:"btn btn-secondary" %>
+
+  <%= button_to "Destroy Friend", friend_path(@friend), method: :delete, data: { confirm: "Are you sure you want to delete this friend?" }, class: "btn btn-danger mt-2" %>
+
+</div>
